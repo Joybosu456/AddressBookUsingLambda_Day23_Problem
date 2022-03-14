@@ -8,7 +8,7 @@ namespace AddressBook
     class Program
     {
         /// <summary>
-        /// UC9_activated by Joy.
+        /// UC10_activated by Joy.
         /// </summary>
         /// <param name="args">The arguments.</param>
 
@@ -23,9 +23,9 @@ namespace AddressBook
             //Age_Between_ThirteenToEighteen(listPerson);
             //AvarageOfTheAge(listPerson);
             //CheckPersonPresentOrNot(listPerson);
-            //SkipThePersonIsLessThenSixty(listPerson);
+            SkipThePersonIsLessThenSixty(listPerson);
             //FindThePersonByAddress(listPerson);
-            CheckPhoneNumberPersonPresentOrNot(listPerson);
+           // CheckPhoneNumberPersonPresentOrNot(listPerson);
 
         }
         
@@ -77,7 +77,7 @@ namespace AddressBook
                 Console.WriteLine("The person is not Present");
             }
         }
-        
+        //UC10
         private static void SkipThePersonIsLessThenSixty(List<Person> listPerson)
         {
             foreach (Person person in listPerson.SkipWhile(e => e.Age < 60))
@@ -85,7 +85,7 @@ namespace AddressBook
                 Console.WriteLine("Name" + person.Name + "Age" + person.Age);
             }
         }
-        //UC8
+        
         private static void FindThePersonByAddress(List<Person> listPerson)
         {
             //if (listPerson.Any(e => e.Address == "Gangnar,nadia"))
@@ -101,7 +101,7 @@ namespace AddressBook
                 Console.WriteLine("Phone Number :" + person.PhNo + " Name :" + person.Name + "Age :" + person.Age);
             }
         }
-        //UC9
+        
         private static void CheckPhoneNumberPersonPresentOrNot(List<Person> listPerson)
         {
             foreach (Person person in listPerson.FindAll(e => e.PhNo == "6296582055"))
