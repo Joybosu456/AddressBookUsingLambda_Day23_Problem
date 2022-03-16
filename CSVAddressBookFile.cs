@@ -13,14 +13,14 @@ namespace NoteBook
     public class CSVAddressBookFile
     {
         /// <summary>
-        /// UC14-Iplements the CSV program.
+        /// UC15-Iplements the Json program.
         /// </summary>
 
         public void IplementCsvProgram()
         {
             string importFilePath = @"F:\NoteBook\AddressBookData.csv";
-            string exportFilePath = @"F:\NoteBook\ExportAddress.csv";
-            //string exportFilePath = @"F:\NoteBook\DataAdress.json";
+           // string exportFilePath = @"F:\NoteBook\ExportAddress.csv";
+            string exportFilePath = @"F:\NoteBook\DataAdress.json";
             using(var reader=new StreamReader(importFilePath))
             using(var csv=new CsvReader(reader,CultureInfo.InvariantCulture))
             {
@@ -45,12 +45,12 @@ namespace NoteBook
                 {
                     csvExport.WriteRecords(records);
                 }
-                //JsonSerializer serializer = new JsonSerializer();
-                //    using(StreamWriter sw=new StreamWriter(exportFilePath))
-                //    using(JsonWriter writer=new JsonTextWriter(sw))
-                //{
-                //    serializer.Serialize(writer,records);
-                //}
+                JsonSerializer serializer = new JsonSerializer();
+                using (StreamWriter sw = new StreamWriter(exportFilePath))
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    serializer.Serialize(writer, records);
+                }
 
             }
         }
